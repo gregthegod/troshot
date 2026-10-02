@@ -161,7 +161,7 @@ body::after{content:"";position:fixed;top:-50%;left:-50%;width:200%;height:200%;
 .media img{transition:transform 1.4s var(--ease)}
 .media video{opacity:0;transition:opacity .6s var(--ease)}
 .media video.on{opacity:1}
-.scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(23,16,12,.5) 0%,rgba(23,16,12,0) 28%,rgba(23,16,12,0) 46%,rgba(23,16,12,.82) 100%)}
+.scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(18,12,9,.66) 0%,rgba(18,12,9,.12) 26%,rgba(18,12,9,0) 42%,rgba(18,12,9,.88) 100%)}
 .scrim-full{position:absolute;inset:0;pointer-events:none;background:rgba(26,18,12,.58)}
 .scrim-left{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(26,18,12,.84) 0%,rgba(26,18,12,.52) 55%,rgba(26,18,12,.62) 100%),linear-gradient(0deg,rgba(26,18,12,.45),rgba(26,18,12,0) 40%)}
 .media .ken{animation:ken 18s ease-in-out infinite alternate}
@@ -172,7 +172,7 @@ body::after{content:"";position:fixed;top:-50%;left:-50%;width:200%;height:200%;
 .card .media{aspect-ratio:16/9}
 .card:hover .media img{transform:scale(1.05)}
 .c-top{position:absolute;top:16px;left:18px;right:18px;display:flex;justify-content:space-between;gap:16px;z-index:2;text-shadow:0 1px 12px rgba(23,16,12,.6)}
-.c-bot{position:absolute;left:18px;right:18px;bottom:16px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.c-bot{text-shadow:0 2px 18px rgba(18,12,9,.55);position:absolute;left:18px;right:18px;bottom:16px;z-index:2;display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
 .c-title .kicker{display:block;margin-bottom:6px;font-size:clamp(16px,1.3vw,20px)}
 .c-title h3{font-family:var(--display);font-size:clamp(34px,3.6vw,64px);line-height:.9;text-transform:uppercase}
 .c-go{display:flex;align-items:center;gap:10px;padding-bottom:4px;white-space:nowrap}
@@ -1094,7 +1094,7 @@ const PAGES = {
   work: { label: 'Work', title: 'Work | Troshot Media', html: () => `
     ${pageHead('dark', 'Selected', 'Work', 'Films, spots and photographs made for brands, artists and organisations between 2024 and 2026.',
       `<div class="chips" role="group" aria-label="Filter projects by type" data-enter>${['All', ...CATS].map((c, i) => `<button class="chip" type="button" data-filter="${c}" aria-pressed="${i === 0}">${c}</button>`).join('')}</div>`)}
-    <section class="board" data-scene="caramel" aria-live="polite">${PROJECTS.map(p => cardHTML(p, { px: true })).join('')}</section>
+    <section class="board" data-scene="dark" aria-live="polite">${PROJECTS.map(p => cardHTML(p, { px: true })).join('')}</section>
     ${thanksHTML('Yours next', 'For new projects, email', 'Want in?')}` },
 
   project: { label: p => p.title, title: p => `${p.title} | Troshot Media`, html: p => {
