@@ -1612,7 +1612,7 @@ const INIT = {
         const u = srcs[i++];
         vlayer.onerror = () => { deadVids.add(u); tryNext(); };
         vlayer.onplaying = () => { clean(); resolve(); };
-        clearTimeout(timer); timer = setTimeout(() => { deadVids.add(u); tryNext(); }, 3000);
+        clearTimeout(timer); timer = setTimeout(() => { deadVids.add(u); tryNext(); }, 4000);
         vlayer.src = u; vlayer.load();
         vlayer.addEventListener('loadedmetadata', () => { try { vlayer.currentTime = s.start || 0; } catch {} }, { once: true });
         const p = vlayer.play(); if (p) p.catch(() => {});
@@ -1628,17 +1628,17 @@ const INIT = {
       af.classList.remove('locked'); afTag.textContent = 'AF';
       gsap.set(af, { left: feed.clientWidth / 2, top: feed.clientHeight / 2, opacity: 1, scale: 1.3 });
       const fp = focusPoint(el, s, isVideo ? 1.06 : 1.1);
-      const dur = isVideo ? 3.6 : 2.8;
+      const dur = isVideo ? 6.2 : 5.4;
       shotTl = gsap.timeline({ onComplete: () => { if (heroVisible) cut(); else shotTl = null; } })
-        .to(el, { scale: isVideo ? 1.02 : 1.05, duration: dur, ease: 'sine.inOut' }, 0)
-        .to(el, { x: '+=5', y: '-=3', rotation: .1, duration: .9, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 0)
-        .to(af, { left: fp.x, top: fp.y, scale: 1, duration: .5, ease: 'power3.inOut' }, .08)
-        .to(el, { filter: 'blur(4px) brightness(.95)', duration: .2, ease: 'power1.out' }, .2)
-        .to(el, { filter: 'blur(8px) brightness(.95)', duration: .15, ease: 'power1.in' }, .4)
-        .to(el, { filter: 'blur(0px) brightness(1)', duration: .3, ease: 'power2.out' }, .55)
-        .call(() => { af.classList.add('locked'); afTag.textContent = 'AF LOCK'; }, null, .85)
-        .to(af, { opacity: .35, duration: .4 }, 1.8)
-        .to({}, { duration: Math.max(.1, dur - 2.2) }, 2.2);
+        .to(el, { scale: isVideo ? 1.02 : 1.04, duration: dur, ease: 'sine.inOut' }, 0)
+        .to(el, { x: '+=6', y: '-=4', rotation: .1, duration: 1.35, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 0)
+        .to(af, { left: fp.x, top: fp.y, scale: 1, duration: .8, ease: 'power3.inOut' }, .15)
+        .to(el, { filter: 'blur(4px) brightness(.95)', duration: .35, ease: 'power1.out' }, .35)
+        .to(el, { filter: 'blur(9px) brightness(.95)', duration: .25, ease: 'power1.in' }, .7)
+        .to(el, { filter: 'blur(0px) brightness(1)', duration: .5, ease: 'power2.out' }, .95)
+        .call(() => { af.classList.add('locked'); afTag.textContent = 'AF LOCK'; }, null, 1.45)
+        .to(af, { opacity: .35, duration: .6 }, 3.6)
+        .to({}, { duration: dur - 4.2 }, 4.2);
       // Warm up the next clip so video takes start without a wait
       const nxt = SHOTS[shotIdx % SHOTS.length];
       if (nxt && nxt.vid) { const u = nxt.vid.find(x => x && !deadVids.has(x)); if (u && !prefetch[u]) { const pv = document.createElement('video'); pv.preload = 'auto'; pv.muted = true; pv.src = u; prefetch[u] = pv; } }
@@ -1656,7 +1656,7 @@ const INIT = {
       roll(img, s, false);
     };
     const cut = () => {
-      gsap.timeline().to(flash, { opacity: 1, duration: .04 }).call(playShot).to(flash, { opacity: 0, duration: .1 }, '+=.04');
+      gsap.timeline().to(flash, { opacity: 1, duration: .06 }).call(playShot).to(flash, { opacity: 0, duration: .16 }, '+=.08');
     };
     // Audio meters bounce like live sound
     const bars = $$('.mt i', hero); let lv = [.4, .4];
@@ -1866,5 +1866,6 @@ navigate(true);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => ScrollTrigger.refresh());
 window.addEventListener('load', () => ScrollTrigger.refresh());
 })();
+
 </script>
 </body></html>
