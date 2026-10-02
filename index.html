@@ -7,10 +7,10 @@
 <meta name="description" content="Troshot Media is a production house for brand films, commercials, music videos, documentary and photography.">
 <meta property="og:title" content="Troshot Media">
 <meta property="og:description" content="Brand films, commercials, music videos and photography.">
-<meta property="og:image" content="/assets/img/p_fezbot.jpg">
+<meta property="og:image" content="/assets/img/h_office_l.jpg">
 <meta name="theme-color" content="#1A120C">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8E%AC%3C/text%3E%3C/svg%3E">
-<link rel="preload" as="image" href="/assets/img/p_fezbot.jpg">
+<link rel="preload" as="image" href="/assets/img/m_victory.jpg">
 <script>document.documentElement.classList.add('js');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,7 +82,7 @@ img,video{display:block;max-width:100%}
 .skip{position:absolute;left:-9999px;top:12px;background:var(--btn-bg);color:var(--btn-fg);padding:12px 18px;z-index:300;font-weight:600}
 .skip:focus{left:12px}
 
-body::after{content:"";position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;z-index:150;opacity:.06;
+body::after{content:"";position:fixed;top:-50%;left:-50%;width:200%;height:200%;pointer-events:none;z-index:150;opacity:.035;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain .9s steps(5) infinite}
 @keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-4%)}60%{transform:translate(-4%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
@@ -198,9 +198,9 @@ body::after{content:"";position:fixed;top:-50%;left:-50%;width:200%;height:200%;
 .batt{display:inline-block;width:24px;height:11px;border:1.5px solid currentColor;border-radius:2px;position:relative}
 .batt::before{content:"";position:absolute;inset:1.5px;right:7px;background:currentColor}
 .batt::after{content:"";position:absolute;right:-4px;top:2.5px;width:2px;height:4px;background:currentColor}
-.hero-inner{position:absolute;left:var(--pad);right:var(--pad);bottom:calc(clamp(20px,3.4vh,36px) + 56px);display:flex;flex-direction:column}
+.hero-inner{z-index:2;position:absolute;left:var(--pad);right:var(--pad);bottom:calc(clamp(20px,3.4vh,36px) + 56px);display:flex;flex-direction:column}
 .hero-kicker{font-family:var(--script);font-size:clamp(46px,5.4vw,96px);line-height:1;color:var(--signal);text-shadow:0 2px 24px rgba(26,18,12,.6);margin:0 0 -.12em 22px;transform:rotate(-5deg);transform-origin:left bottom;position:relative;z-index:2}
-.wordmark{font-family:var(--display);font-size:clamp(88px,22vw,420px);line-height:.84;text-transform:uppercase;display:flex;justify-content:space-between;overflow:hidden;padding:0 clamp(12px,2vw,28px);margin:0 calc(-1 * clamp(12px,2vw,28px))}
+.wordmark{text-shadow:0 12px 60px rgba(18,10,7,.45);font-family:var(--display);font-size:clamp(88px,22vw,420px);line-height:.84;text-transform:uppercase;display:flex;justify-content:space-between;overflow:hidden;padding:0 clamp(12px,2vw,28px);margin:0 calc(-1 * clamp(12px,2vw,28px))}
 .wordmark.live{overflow:visible}
 .wordmark .l{display:inline-block;will-change:transform,filter}
 .hero-foot{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px;padding:0 20px;margin-top:clamp(18px,3vh,32px)}
@@ -220,7 +220,7 @@ body::after{content:"";position:fixed;top:-50%;left:-50%;width:200%;height:200%;
 .reel-ui{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(18px,2.6vw,36px)}
 .reel-top{display:flex;justify-content:space-between;gap:16px}
 .reel-bot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.reel-title{font-family:var(--display);font-size:clamp(80px,15vw,270px);line-height:.84;text-transform:uppercase}
+.reel-title{font-family:var(--display);font-size:clamp(34px,3.6vw,60px);line-height:.84;text-transform:uppercase}
 .work-reel{position:relative;padding:40px 0 100px;overflow:hidden}
 .work-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;padding:0 var(--pad);margin-bottom:36px}
 .work-head .meta{display:flex;flex-direction:column;align-items:flex-end;gap:18px}
@@ -513,6 +513,221 @@ footer{padding:64px var(--pad) calc(env(safe-area-inset-bottom,0px) + 26px);bord
 .cta2 .ph .media{transition:transform .8s var(--ease)}
 @media (max-width:899px){.cta2 .ph2,.cta2 .ph3{display:none}.cta2 .ph{width:28vw}.cta2 .ph1{top:4%}.cta2 .ph4{bottom:4%}}
 
+
+/* ---------- Smoothness pass: rolling labels ---------- */
+.roll{position:relative;display:inline-block;overflow:hidden;vertical-align:top;line-height:1.25}
+.roll .r1,.roll .r2{display:block;transition:transform .6s var(--ease)}
+.roll .r2{position:absolute;left:0;top:0;transform:translateY(110%)}
+.btn:hover .roll .r1,.nav-links a:hover .roll .r1{transform:translateY(-110%)}
+.btn:hover .roll .r2,.nav-links a:hover .roll .r2{transform:translateY(0)}
+
+/* ---------- Hero photo stack, clock, copy email ---------- */
+.hero .hero-bg{opacity:.5}
+.stack-wrap{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top,0px) + 92px);height:clamp(260px,47vh,560px);display:flex;justify-content:center;z-index:1;pointer-events:none}
+.stack{position:relative;height:100%;aspect-ratio:.8}
+.sc{position:absolute;inset:0;box-shadow:0 30px 90px rgba(10,6,4,.55)}
+.sc .media{position:absolute;inset:0}
+.sc-c{z-index:3}.sc-r{z-index:2}.sc-l{z-index:1}
+.hmeta{display:flex;align-items:center;gap:14px 18px;flex-wrap:wrap}
+.hmeta #clock{font-weight:600;color:var(--fg);margin-left:6px;font-variant-numeric:tabular-nums}
+button.copy{display:inline-flex;align-items:center;gap:10px;background:none;border:1.5px solid rgba(246,241,232,.35);padding:7px 10px;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;transition:border-color .3s}
+button.copy:hover,button.copy.done{border-color:var(--accent)}
+button.copy .cp{color:var(--accent)}
+
+/* ---------- Client names strip ---------- */
+.logos{padding:30px 0 36px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:18px;overflow:hidden}
+.logos > p{padding:0 var(--pad);color:var(--mute)}
+.logo-i{font-family:var(--display);font-size:clamp(26px,2.6vw,40px);line-height:1.1;text-transform:uppercase;color:var(--mute);padding-right:clamp(40px,5vw,72px);white-space:nowrap}
+.logo-i.alt{font-family:var(--body);font-weight:600;text-transform:none;letter-spacing:-.02em}
+
+/* ---------- Reel: running text over the film ---------- */
+.reel-run{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);z-index:2;overflow:hidden;pointer-events:none}
+.reel-run .mq-track{display:flex;align-items:center;width:max-content;animation:run 22s linear infinite}
+.reel-run span{font-family:var(--display);font-size:clamp(64px,10vw,180px);line-height:1.05;text-transform:uppercase;color:transparent;-webkit-text-stroke:1.5px rgba(246,241,232,.8);padding:0 .25em;white-space:nowrap}
+.reel-run i{display:block;width:clamp(12px,1.2vw,20px);height:clamp(12px,1.2vw,20px);border-radius:50%;background:var(--signal);flex:0 0 auto}
+@keyframes run{to{transform:translateX(-50%)}}
+
+/* ---------- Stacking service cards (fixed colour pairs, all AA) ---------- */
+.scards{display:flex;flex-direction:column;gap:clamp(16px,2vw,24px)}
+.scard{position:sticky;top:calc(env(safe-area-inset-top,0px) + 92px + var(--i) * 14px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:min(72vh,640px);overflow:hidden;transform-origin:50% 0;will-change:transform}
+.sc-copy{padding:clamp(24px,3.4vw,52px);display:flex;flex-direction:column;justify-content:space-between;gap:22px;align-items:flex-start}
+.sc-num{font-family:var(--display);font-size:clamp(46px,5vw,84px);line-height:1}
+.scard h3{font-family:var(--display);font-size:clamp(44px,5.2vw,90px);line-height:.92;text-transform:uppercase;margin-top:auto}
+.scard p{max-width:40ch;font-size:clamp(16px,1.2vw,18px)}
+.scard .media.sc-img{min-height:100%}
+.scard.t0{background:#1A120C;color:#F6F1E8;--fg:#F6F1E8;--bg:#1A120C;--line:rgba(246,241,232,.28);--btn-bg:#FE3001;--btn-fg:#120A07;--btn-hbg:#F6F1E8;--btn-hfg:#120A07}
+.scard.t0 .sc-num{color:#FE3001}
+.scard.t1{background:#FE3001;color:#120A07;--fg:#120A07;--bg:#FE3001;--line:rgba(18,10,7,.32);--btn-bg:#120A07;--btn-fg:#ECF7E7;--btn-hbg:#ECF7E7;--btn-hfg:#120A07}
+.scard.t2{background:#B2906A;color:#1A120C;--fg:#1A120C;--bg:#B2906A;--line:rgba(26,18,12,.32);--btn-bg:#1A120C;--btn-fg:#F6F1E8;--btn-hbg:#FE3001;--btn-hfg:#120A07}
+.scard.t3{background:#F6F1E8;color:#120A07;--fg:#120A07;--bg:#F6F1E8;--line:rgba(18,10,7,.2);--btn-bg:#FE3001;--btn-fg:#120A07;--btn-hbg:#120A07;--btn-hfg:#F6F1E8}
+.scard.t3 .sc-num{color:#C42700}
+
+/* ---------- Stats, quote avatars ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:clamp(56px,9vh,96px);padding-top:clamp(40px,6vh,64px);border-top:1px solid var(--line)}
+.stats .n{display:block;font-family:var(--display);font-size:clamp(64px,7vw,128px);line-height:1}
+.stats .n b{font-weight:400;font-variant-numeric:tabular-nums}
+.stats .fol{color:var(--mute);display:block;margin-top:10px}
+.q figcaption{display:flex;align-items:center;gap:14px}
+.q .av{width:52px;height:52px;border-radius:50%;object-fit:cover;flex:0 0 auto}
+
+/* ---------- Packages ---------- */
+.plans-sec{padding:clamp(80px,12vh,140px) var(--pad)}
+.plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--gut);align-items:stretch}
+.plan{border:1.5px solid var(--fg);padding:clamp(22px,2.6vw,36px);display:flex;flex-direction:column;gap:20px;transition:transform .6s var(--ease)}
+.plan:hover{transform:translateY(-6px)}
+.pl-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.plan h3{font-family:var(--display);font-size:clamp(34px,3vw,52px);line-height:1;text-transform:uppercase}
+.plan > p{color:var(--mute)}
+.pl-tag{background:#120A07;color:#ECF7E7;padding:6px 10px;white-space:nowrap}
+.price b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(52px,5vw,84px);line-height:1;margin:6px 0}
+.plan ul li{padding:11px 0;border-top:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.plan ul li::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:0 0 auto}
+.plan .btn{margin-top:auto;align-self:flex-start}
+.plan.hot{background:#FE3001;color:#120A07;border-color:#FE3001;--fg:#120A07;--bg:#FE3001;--mute:#3D0C00;--line:rgba(18,10,7,.3);--btn-bg:#120A07;--btn-fg:#ECF7E7;--btn-hbg:#ECF7E7;--btn-hfg:#120A07}
+
+/* ---------- Numbered FAQ ---------- */
+.faq-q{justify-content:flex-start}
+.faq-n{color:var(--accent);min-width:3.2ch}
+.faq-t{flex:1}
+
+@media (max-width:899px){
+  .stack-wrap{height:30vh;top:calc(env(safe-area-inset-top,0px) + 124px)}
+  .scard{grid-template-columns:1fr;min-height:0;position:relative;top:auto}
+  .scard .media.sc-img{min-height:0;aspect-ratio:16/10;order:-1}
+  .stats{grid-template-columns:1fr 1fr}
+  .plans{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){.reel-run .mq-track{animation:none}}
+
+
+/* ---------- Hero: a camera monitor recording live takes ---------- */
+.cam{background:#0d0907}
+.cam-feed{position:absolute;inset:0;overflow:hidden;will-change:transform}
+.cam-feed .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;will-change:transform,filter}
+.cam-feed .vshot{background:#0d0907}
+.cam-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(13,9,7,.55) 0%,rgba(13,9,7,.05) 22%,rgba(13,9,7,.3) 48%,rgba(13,9,7,.88) 100%)}
+.cam-ui{position:absolute;inset:calc(env(safe-area-inset-top,0px) + 80px) var(--pad) clamp(20px,3.4vh,36px);pointer-events:none;color:#F6F1E8}
+.guide{position:absolute;left:0;right:0;height:1px;background:rgba(246,241,232,.22)}
+.g-t{top:12%}.g-b{bottom:12%}
+.af{position:absolute;left:50%;top:50%;width:0;height:0}
+.af-box{position:absolute;left:-60px;top:-44px;width:120px;height:88px;border:1.5px solid rgba(246,241,232,.9);transition:border-color .25s,width .35s var(--ease),height .35s var(--ease),left .35s var(--ease),top .35s var(--ease)}
+.af-box::before,.af-box::after{content:"";position:absolute;left:50%;top:50%;background:currentColor}
+.af.locked .af-box{border-color:#FE3001;width:96px;height:70px;left:-48px;top:-35px}
+.af-tag{position:absolute;left:-60px;top:-66px;white-space:nowrap;color:#F6F1E8;transition:left .35s var(--ease),top .35s var(--ease)}
+.af.locked .af-tag{left:-48px;top:-57px;color:#FE3001}
+.hud-br{position:absolute;right:20px;bottom:16px}
+.meters{position:absolute;right:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.meters .mt{display:none}
+.meters{flex-direction:row;align-items:flex-end;gap:4px;height:120px}
+.meters .mt{display:block;width:6px;height:100%;background:rgba(246,241,232,.18);position:relative;overflow:hidden}
+.meters .mt i{position:absolute;left:0;right:0;bottom:0;height:100%;transform-origin:50% 100%;transform:scaleY(.3);background:linear-gradient(0deg,#F6F1E8 0 70%,#FE3001 70% 100%)}
+.meters .fol{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);white-space:nowrap;color:rgba(246,241,232,.8)}
+.cut-flash{position:absolute;inset:calc(-1 * (env(safe-area-inset-top,0px) + 80px)) calc(-1 * var(--pad)) calc(-1 * clamp(20px,3.4vh,36px));background:#000;opacity:0}
+.hero-copy{position:absolute;z-index:2;left:var(--pad);right:var(--pad);bottom:calc(clamp(20px,3.4vh,36px) + 56px);padding:0 20px;display:flex;flex-direction:column;align-items:flex-start;gap:20px;color:#F6F1E8}
+.hero-copy h1{font-family:var(--display);font-weight:400;font-size:clamp(54px,7.4vw,132px);line-height:.9;text-transform:uppercase;max-width:12ch;text-shadow:0 8px 40px rgba(13,9,7,.45)}
+.hero-copy .fol{color:#E6D8C4}
+.hero-copy .hero-kicker{font-family:var(--script);font-weight:400;font-size:clamp(46px,5.2vw,92px);line-height:1;color:var(--signal);text-shadow:0 2px 24px rgba(13,9,7,.6);margin:0 0 -.62em 6px;transform:rotate(-5deg);transform-origin:left bottom;position:relative;z-index:2;text-transform:none}
+
+/* ---------- Contact ---------- */
+.ct-hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center;min-height:100vh;min-height:100svh;padding:calc(env(safe-area-inset-top,0px) + 120px) var(--pad) clamp(60px,10vh,110px)}
+.ct-hero h1{font-family:var(--display);font-weight:400;font-size:clamp(72px,9.6vw,176px);line-height:.86;text-transform:uppercase}
+.ct-left .lead{max-width:42ch;color:var(--mute);margin-top:24px}
+.ct-quick{margin-top:40px;border-top:1px solid var(--line)}
+.ct-row{display:grid;grid-template-columns:130px minmax(0,1fr) auto;align-items:center;gap:16px;width:100%;padding:18px 0;border:0;border-bottom:1px solid var(--line);background:none;text-align:left;cursor:pointer;color:var(--fg);transition:padding .5s var(--ease),background .4s}
+.ct-row:not(.static):hover{padding-left:12px;padding-right:12px;background:color-mix(in srgb,var(--fg) 6%,transparent)}
+.ct-row.static{cursor:default}
+.ct-row .k{color:var(--mute)}
+.ct-row .v{font-size:clamp(17px,1.5vw,22px);font-weight:500;overflow-wrap:anywhere}
+.ct-row .cp,.ct-row .go{color:var(--accent)}
+.live{display:inline-flex;align-items:center;gap:8px;color:var(--mute);text-align:right}
+.live i{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(254,48,1,.6);animation:pulse 1.8s ease-out infinite;flex:0 0 auto}
+.live.off i{background:var(--mute);animation:none}
+@keyframes pulse{to{box-shadow:0 0 0 10px rgba(254,48,1,0)}}
+.ct-right{position:relative}
+.ct-img{aspect-ratio:4/5}
+.producer{position:absolute;left:-28px;bottom:28px;z-index:2;width:min(320px,78%);margin:0;display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center;padding:12px;background:#F6F1E8;color:#120A07;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.producer .media{aspect-ratio:1}
+.producer .fol{display:block;color:#5F4C3B;margin-bottom:6px}
+.producer strong{display:block;font-family:var(--display);font-weight:400;font-size:26px;line-height:1;text-transform:uppercase}
+.producer figcaption > span:last-child{display:block;font-size:15px;margin-top:4px}
+.ct-form-sec{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);padding:clamp(80px,12vh,140px) var(--pad);align-items:start}
+.ct-next{position:sticky;top:calc(env(safe-area-inset-top,0px) + 110px)}
+.ct-next > .fol{color:var(--mute)}
+.ct-next ol{margin-top:20px;border-top:1px solid var(--line)}
+.ct-next li{display:grid;grid-template-columns:52px 1fr;gap:12px;padding:22px 0;border-bottom:1px solid var(--line)}
+.ct-next .n{font-family:var(--display);font-size:28px;line-height:1;color:var(--accent)}
+.ct-next h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2vw,32px);line-height:1;text-transform:uppercase;margin-bottom:8px}
+.ct-next p{color:var(--mute);font-size:16px}
+.ct-social{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;margin-top:26px}
+.ct-social .fol{color:var(--mute)}
+.ct-social a:hover{text-decoration:underline;text-underline-offset:4px}
+/* the form card keeps fixed colours, whatever the page scene is doing */
+.ct-form-sec .form-wrap{--fg:#120A07;--bg:#F6F1E8;--mute:#5F4C3B;--line:rgba(18,10,7,.16);--accent:#C42700;--error:#A8320E;--btn-bg:#FE3001;--btn-fg:#120A07;--btn-hbg:#120A07;--btn-hfg:#F6F1E8;color:var(--fg)}
+.ct-form-sec .form-wrap > *{background:var(--bg);border:1.5px solid var(--fg);padding:clamp(24px,3.4vw,52px);box-shadow:0 30px 80px rgba(18,10,7,.08)}
+.ct-card{gap:48px}
+.ct-progress{display:flex;align-items:center;gap:16px}
+.ct-progress .playhead{flex:1;width:auto}
+.ct-pct{color:var(--mute);min-width:14ch;text-align:right}
+.grp{display:grid;gap:28px}
+.grp-h{display:flex;align-items:baseline;gap:14px;font-family:var(--display);font-size:clamp(28px,2.4vw,40px);line-height:1;text-transform:uppercase;padding:0;margin-bottom:24px}
+.grp-h .n{font-size:.55em;color:var(--accent)}
+.cnt{display:block;margin-top:8px;color:var(--mute);text-align:right}
+@media (max-width:899px){
+  .meters{display:none}
+  .hud-br{display:none}
+  .ct-hero,.ct-form-sec{grid-template-columns:1fr}
+  .ct-hero{min-height:0;padding-top:calc(env(safe-area-inset-top,0px) + 110px)}
+  .ct-row{grid-template-columns:96px minmax(0,1fr) auto}
+  .ct-row .live{grid-column:2 / -1;justify-self:start}
+  .producer{left:12px;bottom:12px}
+  .ct-next{position:relative;top:auto}
+  .af-box{width:90px;height:66px;left:-45px;top:-33px}
+}
+@media (prefers-reduced-motion:reduce){.live i{animation:none}}
+
+
+
+
+
+@media (max-width:520px){
+  .cam .hud{gap:10px}
+  .cam .hud-tr .batt{display:none}
+}
+
+
+.hero-copy h1.wordmark{width:100%;max-width:none;font-size:clamp(88px,22vw,420px);line-height:.84;text-shadow:0 12px 60px rgba(13,9,7,.45)}
+.hero-copy .hero-kicker{margin:0 0 -.32em 14px}
+
+
+/* ---------- Mobile pass ---------- */
+.swipe-hint{display:none}
+@media (max-width:899px){
+  .swipe-hint{display:inline-flex;align-items:center;gap:8px;color:var(--mute)}
+  .swipe-hint i{width:18px;height:1.5px;background:currentColor;position:relative;animation:nudge 1.6s var(--ease) infinite}
+  .swipe-hint i::after{content:"";position:absolute;right:-5px;top:50%;width:6px;height:6px;border-radius:50%;background:currentColor;transform:translateY(-50%)}
+  @keyframes nudge{50%{transform:translateX(8px)}}
+  .ct-img{aspect-ratio:4/3}
+  .cta2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;align-content:center;min-height:0;padding:110px var(--pad) 90px}
+  .cta2 .ph{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:auto;grid-row:1;margin:0}
+  .cta2 .ph2{display:block}.cta2 .ph3{display:none}
+  .cta2 .ph .fol{font-size:9px}
+  .cta2 .in{grid-column:1 / -1;grid-row:2;margin-top:36px}
+  .hero-copy{padding:0 6px}
+  .hero-copy .hero-kicker{font-size:clamp(38px,11vw,56px)}
+  .work-reel .work-track .card{width:84vw}
+  .q-stage{min-height:300px}
+  .steps .step{opacity:1}
+}
+@media (max-width:520px){
+  .crew .crew-grid{grid-template-columns:1fr 1fr;gap:22px 10px}
+  .crew .member h3{font-size:22px;margin-top:10px}
+  .crew .member p{font-size:13px}
+  .crew .member .m-role{left:8px;top:8px;font-size:9px}
+  .stats .n{font-size:clamp(52px,16vw,72px)}
+  .plan{padding:22px}
+  .slide-title h1{font-size:clamp(64px,17vw,96px)}
+}
+
 /* ---------- Responsive ---------- */
 @media (min-width:900px){
   .work-reel{height:100vh;height:100svh;padding:100px 0 6vh;display:flex;flex-direction:column;justify-content:center}
@@ -643,85 +858,90 @@ const ICO = '<span class="ico" aria-hidden="true"></span>';
    MOCK DATA: every name, client, quote and number is invented
    ========================================================= */
 const PROJECTS = [
-  { slug:'static-and-soul', title:'Static & Soul', client:'Lumen Audio', cat:'Brand films', type:'Brand film', year:2026, runtime:'2:14', lenLabel:'Runtime', by:'Directed by', director:'Amara Bello', img:'p_fezbot', vid:'room', pool:['p_fezbot','room','p_head'],
+  { slug:'static-and-soul', title:'Static & Soul', client:'Lumen Audio', cat:'Brand films', type:'Brand film', year:2026, runtime:'2:14', lenLabel:'Runtime', by:'Directed by', director:'Amara Bello', img:'h_office_l', vid:'room', pool:['h_jordan_l','room','h_ivancik_l'],
     kicker:'Turn it down:', genre:'Inspirational, Dramatic, Lifestyle',
     concept:'A young producer lies on her studio floor at 3am, headphones on, chasing a melody that won\u2019t land. We stay with her through one long night in a wood-panelled room as noise slowly becomes music.',
     story:'Near dawn she finds a cassette her father recorded decades ago. One sample from it unlocks the track, and for the first time in the film the room fills with warm morning light.',
     hash:'#breakthrough', hashNote:'We wanted people to feel the relief of a breakthrough, not watch a product demo. The headphones are in every frame but never the subject.',
     outcome:'Launched across cinema, pre-roll and Lumen\u2019s own channels. The full film passed 1.4 million views in its first month and anchored the brand\u2019s autumn campaign.',
-    credits:[['Director','Amara Bello'],['Producer','Daniel Mensah'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes'],['Sound','Jide Bankole']],
+    credits:[['Director','Amara Bello'],['Producer','Precious Owei'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes'],['Sound','Jide Bankole']],
     recog:['Shortlist, Best Brand Film, Northern Light Awards 2026','Staff pick, Frame & Grain'] },
-  { slug:'side-b', title:'Side B', client:'Kofi Laine', cat:'Music videos', type:'Music video', year:2025, runtime:'3:48', lenLabel:'Runtime', by:'Directed by', director:'Amara Bello', img:'p_ali', vid:'vinyl', pool:['p_ali','vinyl','p_ayo'],
+  { slug:'side-b', title:'Side B', client:'Kofi Laine', cat:'Music videos', type:'Music video', year:2025, runtime:'3:48', lenLabel:'Runtime', by:'Directed by', director:'Amara Bello', img:'p_ali', vid:'vinyl', pool:['p_ali','vinyl','h_jordan_l'],
     kicker:'Flip it over:', genre:'Performance, Moody, Nocturnal',
     concept:'A record collector finds a B-side he has never heard in a crate he has owned for years. As it plays, the shop around him slips back to the night it was recorded.',
     story:'We built the whole piece around a single turntable, one practical lamp and a slow push-in that never cuts away. Every edit lands on the snare.',
     hash:'#onetake', hashNote:'Kofi wanted the video to feel like listening alone at night. One room, one lamp, one long breath.',
     outcome:'Released as the official video for the lead single, with vertical edits for the album rollout. It became the most watched video on Kofi\u2019s channel in a week.',
-    credits:[['Director','Amara Bello'],['Producer','Daniel Mensah'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes']],
+    credits:[['Director','Amara Bello'],['Producer','Precious Owei'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes']],
     recog:['Official video, Side B (2025)'] },
-  { slug:'low-tide', title:'Low Tide', client:'Tidewater Cooperative', cat:'Documentary', type:'Documentary short', year:2025, runtime:'18:20', lenLabel:'Runtime', by:'Directed by', director:'Ruben Cole', img:'dusk', pool:['dusk','p_bwhat','p_beach'],
+  { slug:'low-tide', title:'Low Tide', client:'Tidewater Cooperative', cat:'Documentary', type:'Documentary short', year:2025, runtime:'18:20', lenLabel:'Runtime', by:'Directed by', director:'Ruben Cole', img:'dusk', pool:['dusk','h_intro_l','h_meeting_l'],
     kicker:'Before the boats go out:', genre:'Observational, Human, Coastal',
     concept:'A fishing cooperative wanted to show what changing tides and falling prices mean for the families who depend on the water, in their own words.',
     story:'We spent three weeks embedded with the crews as a two-person team, shooting from dawn to dusk and recording interviews where the work happens.',
     hash:'#intheirwords', hashNote:'No narrator, no score until the final minute. The sea and the people carry it.',
     outcome:'Screened at three festivals and used by the cooperative to make its case to regional funders, who renewed support for another five years.',
-    credits:[['Director','Ruben Cole'],['Producer','Daniel Mensah'],['Cinematography','Ruben Cole'],['Editor','Kwame Asante'],['Colour','Sofia Reyes'],['Sound','Jide Bankole']],
+    credits:[['Director','Ruben Cole'],['Producer','Precious Owei'],['Cinematography','Ruben Cole'],['Editor','Kwame Asante'],['Colour','Sofia Reyes'],['Sound','Jide Bankole']],
     recog:['Official Selection, Harbourlight Short Film Festival 2025','Audience Award, Coastline Docs 2025'] },
-  { slug:'full-stride', title:'Full Stride', client:'Northline Athletics', cat:'Commercials', type:'Commercial', year:2024, runtime:'0:45', lenLabel:'Runtime', by:'Directed by', director:'Ruben Cole', img:'p_skate', pool:['p_skate','track','p_street'],
-    kicker:'Every lane counts:', genre:'Energetic, Bold, Sport',
-    concept:'A 45-second hero spot for a running shoe launch, built around one idea: the last hundred metres matter more than the first.',
-    story:'Trackside at golden hour with high-speed cameras, bold colour blocking from the art department and a rhythmic edit cut to footsteps.',
-    hash:'#lastlap', hashNote:'Real club athletes, not models. Their form is the special effect.',
+  { slug:'say-it-loud', title:'Say It Loud', client:'Ringo Mobile', cat:'Commercials', type:'Commercial', year:2024, runtime:'0:45', lenLabel:'Runtime', by:'Directed by', director:'Ruben Cole', img:'h_ivana_l', pool:['h_ivana_l','h_charles_p','h_kal_l'],
+    kicker:'Turn it up:', genre:'Joyful, Bold, Everyday',
+    concept:'A mobile network wanted a launch spot about the moments people can\u2019t wait to share, shot like a portrait series rather than a phone advert.',
+    story:'One day in a colour-blocked studio with twelve real customers, each telling the camera about news they had to share. Their laughter became the edit.',
+    hash:'#realreactions', hashNote:'No scripts for the cast. We asked one question and kept rolling.',
     outcome:'Delivered as one hero film and fourteen cut-downs across six aspect ratios, on schedule and on budget.',
-    credits:[['Director','Ruben Cole'],['Producer','Daniel Mensah'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes']],
-    recog:['Campaign of the month, Runners Weekly'] },
-  { slug:'still-life', title:'Still Life', client:'Kalm Skincare', cat:'Photography', type:'Product photography', year:2026, runtime:'24 frames', lenLabel:'Frames', by:'Photographed by', director:'Mira Haddad', img:'bottle', pool:['bottle','p_beach','window'],
+    credits:[['Director','Ruben Cole'],['Producer','Precious Owei'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes']],
+    recog:['Campaign of the month, Mobile Marketing Weekly'] },
+  { slug:'still-life', title:'Still Life', client:'Kalm Skincare', cat:'Photography', type:'Beauty campaign', year:2026, runtime:'24 frames', lenLabel:'Frames', by:'Photographed by', director:'Mira Haddad', img:'h_brooke_l', pool:['h_brooke_l','bottle','p_beach'],
     kicker:'Slow down:', genre:'Minimal, Warm, Tactile',
-    concept:'A skincare label needed product imagery that felt like it belonged in a gallery rather than a catalogue.',
-    story:'Single-source lighting, handmade plaster sets and a palette pulled from each product\u2019s packaging. Nothing digital that could be done by hand.',
-    hash:'#handmade', hashNote:'Every shadow in the series is real. We built the light, not the retouch.',
+    concept:'A skincare label wanted campaign portraits that felt warm and human rather than clinical, with product shots to match.',
+    story:'Single-source window light, seamless paper in the brand\u2019s own colours and minimal retouching. Skin looks like skin.',
+    hash:'#realskin', hashNote:'Every portrait in the series kept its freckles, lines and texture.',
     outcome:'Twenty-four finished frames now used across the website, packaging and a print campaign in three markets.',
-    credits:[['Photographer','Mira Haddad'],['Set design','Lena Fischer'],['Producer','Daniel Mensah'],['Retouching','Sofia Reyes']],
-    recog:['Shortlist, Still Life category, Lumiere Photo Prize 2026'] },
-  { slug:'afterhours', title:'Afterhours', client:'Amber Ale Co.', cat:'Commercials', type:'Commercial', year:2025, runtime:'0:30', lenLabel:'Runtime', by:'Directed by', director:'Amara Bello', img:'p_red', vid:'haze', pool:['p_red','haze','p_plaid'],
+    credits:[['Photographer','Mira Haddad'],['Set design','Lena Fischer'],['Producer','Precious Owei'],['Retouching','Sofia Reyes']],
+    recog:['Shortlist, Portrait category, Lumiere Photo Prize 2026'] },
+  { slug:'afterhours', title:'Afterhours', client:'Amber Ale Co.', cat:'Commercials', type:'Commercial', year:2025, runtime:'0:30', lenLabel:'Runtime', by:'Directed by', director:'Amara Bello', img:'h_cafe_l', vid:'haze', pool:['h_cafe_l','haze','p_red'],
     kicker:'Last orders:', genre:'Nightlife, Warm, Social',
     concept:'A nightlife spot for a craft brewer that felt like a real night out, without the usual glossy club clich\u00e9s.',
     story:'We lit a working venue with practical tubes and haze, cast the regulars instead of models and let the camera move with the crowd.',
     hash:'#realnight', hashNote:'Nothing was staged twice. If a moment happened, we kept it.',
     outcome:'Ran as a 30-second online and cinema spot with a set of 6- and 15-second social edits across the brand\u2019s summer season.',
-    credits:[['Director','Amara Bello'],['Producer','Daniel Mensah'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Sound','Jide Bankole']],
+    credits:[['Director','Amara Bello'],['Producer','Precious Owei'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Sound','Jide Bankole']],
     recog:[] },
-  { slug:'night-market', title:'Night Market', client:'Chopbox', cat:'Brand films', type:'Brand film', year:2026, runtime:'1:58', lenLabel:'Runtime', by:'Directed by', director:'Ruben Cole', img:'p_plaid', vid:'market', pool:['p_plaid','market','p_ayo'],
+  { slug:'night-market', title:'Night Market', client:'Chopbox', cat:'Brand films', type:'Brand film', year:2026, runtime:'1:58', lenLabel:'Runtime', by:'Directed by', director:'Ruben Cole', img:'h_intro_l', vid:'market', pool:['h_intro_l','market','p_plaid'],
     kicker:'Hungry yet:', genre:'Street, Warm, Lively',
     concept:'A delivery app launching in a city that already had three. The film needed to feel like the street at night, not another advert.',
     story:'Two nights in working markets with available light and real vendors, graded warm against deep shadow so the food does the talking.',
     hash:'#streetfirst', hashNote:'The vendors we filmed became the faces of the whole launch campaign.',
     outcome:'The launch film ran across social and cinema, and Chopbox signed every featured vendor as a launch partner.',
-    credits:[['Director','Ruben Cole'],['Producer','Daniel Mensah'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes'],['Sound','Jide Bankole']],
+    credits:[['Director','Ruben Cole'],['Producer','Precious Owei'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes'],['Sound','Jide Bankole']],
     recog:['Best Launch Film, City Brand Awards 2026'] },
-  { slug:'second-skin', title:'Second Skin', client:'Atelier Noor', cat:'Brand films', type:'Fashion film', year:2024, runtime:'1:52', lenLabel:'Runtime', by:'Directed by', director:'Amara Bello', img:'p_walk', pool:['p_walk','p_suits','p_stairs'],
+  { slug:'second-skin', title:'Second Skin', client:'Atelier Noor', cat:'Brand films', type:'Fashion film', year:2024, runtime:'1:52', lenLabel:'Runtime', by:'Directed by', director:'Amara Bello', img:'h_kal_l', pool:['h_kal_l','p_walk','p_suits'],
     kicker:'Wear it loud:', genre:'Fashion, Bold, Street',
     concept:'A clothing label launching its first collection wanted a film about the people who wear it, not the runway.',
     story:'We cast friends of the brand, filmed them walking the city at golden hour and cut the whole piece to the rhythm of their footsteps.',
     hash:'#streetcast', hashNote:'No models and no stylist rails. Everyone wore the collection their own way.',
     outcome:'The film launched the collection online and in store, and the cast became the faces of the season\u2019s lookbook.',
-    credits:[['Director','Amara Bello'],['Producer','Daniel Mensah'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes']],
+    credits:[['Director','Amara Bello'],['Producer','Precious Owei'],['Cinematography','Lena Fischer'],['Editor','Kwame Asante'],['Colour','Sofia Reyes']],
     recog:['Best Fashion Film, Cut & Sew Awards 2024'] }
 ];
 const CATS = ['Brand films','Commercials','Music videos','Documentary','Photography'];
 const SERVICES = [
-  { slug:'brand-films', name:'Brand films', img:'p_fezbot', short:'Stories about who you are, cut for the web, the big screen and everything in between.',
+  { slug:'brand-films', name:'Brand films', img:'h_jordan_p', short:'Stories about who you are, cut for the web, the big screen and everything in between.',
     long:'Films that explain who you are and why it matters, from a 60-second manifesto to a ten-minute founder story.', deliv:['Concept and script','Casting and locations','Hero film','Social cut-downs','Subtitled versions'] },
-  { slug:'commercials', name:'Commercials', img:'p_skate', short:'Campaign spots from script to final grade, delivered in every aspect ratio you need.',
+  { slug:'commercials', name:'Commercials', img:'h_ivana_p', short:'Campaign spots from script to final grade, delivered in every aspect ratio you need.',
     long:'TV, cinema and online spots built around one clear idea and produced to broadcast spec.', deliv:['Treatment and storyboard','Production management','Hero spot','Aspect-ratio versions','Broadcast masters'] },
-  { slug:'music-videos', name:'Music videos', img:'p_ali', short:'Visual worlds for artists, built around the track rather than laid on top of it.',
+  { slug:'music-videos', name:'Music videos', img:'p_ali_p', short:'Visual worlds for artists, built around the track rather than laid on top of it.',
     long:'Performance and narrative videos for artists and labels, with the visual language built from the song outward.', deliv:['Treatment','Choreography and art direction','Performance shoot','Visualisers','Vertical edits'] },
-  { slug:'documentary', name:'Documentary', img:'dusk', short:'Real people and real places, shot with patience and edited with care.',
+  { slug:'documentary', name:'Documentary', img:'h_intro_l', short:'Real people and real places, shot with patience and edited with care.',
     long:'Short and long-form documentary for brands, charities and broadcasters, made with access and trust earned on the ground.', deliv:['Research and access','Interviews','Observational filming','Long and short edits','Festival deliverables'] },
-  { slug:'photography', name:'Photography', img:'bottle', short:'Campaign, product and interiors photography with the same eye we bring to film.',
+  { slug:'photography', name:'Photography', img:'h_brooke_p', short:'Campaign, product and interiors photography with the same eye we bring to film.',
     long:'Stills that match your films or stand on their own: campaign, product, interiors and behind-the-scenes photography.', deliv:['Campaign shoots','Product and still life','Interiors','Retouching','Usage-ready exports'] },
-  { slug:'post-production', name:'Post-production', img:'lamp', short:'Editing, colour grading, sound design and motion graphics, all in house.',
+  { slug:'post-production', name:'Post-production', img:'h_office_l', short:'Editing, colour grading, sound design and motion graphics, all in house.',
     long:'Everything after the shoot, in one room: edit, colour, sound and graphics, for our productions or footage you bring to us.', deliv:['Offline and online edit','Colour grading','Sound design and mix','Motion graphics','Captions and versioning'] }
+];
+const PLANS = [
+  ['Single shoot','One shoot day for a product, portrait or social campaign, finished and ready to post.','$4,500','per project',['Half or full shoot day','Director and camera crew','Edit, colour and sound','Three social cut-downs','Delivery in two weeks']],
+  ['Campaign','A complete film or photo campaign from idea to launch, our most common way of working.','$18,000','per project',['Concept, script and treatment','Casting, locations and permits','Two to three shoot days','Hero film plus cut-downs','Stills from the shoot']],
+  ['Retainer','An ongoing creative partner for brands that publish every month.','$6,000','per month',['Monthly content planning','Two shoot days a month','Unlimited edits and versions','Priority booking','Quarterly creative review']]
 ];
 const STEPS = [
   ['Develop','We dig into the brief, write the idea and plan every shot before a camera moves.'],
@@ -738,14 +958,16 @@ const FAQ = [
 ];
 const CREW = [
   ['Amara Bello','Founder and director','c_braids','Directs brand films and music videos. Ten years of shooting real people in warm, lived-in places.'],
-  ['Ruben Cole','Director','c_backpack','Documentary-trained director who brings patience and access to commercial work.'],
-  ['Daniel Mensah','Executive producer','c_glasses','Runs budgets, schedules and permits so every shoot day is about the work.'],
+  ['Ruben Cole','Director','h_ivancik_p','Documentary-trained director who brings patience and access to commercial work.'],
+  ['Precious Owei','Executive producer','c_precious','Runs budgets, schedules and permits so every shoot day is about the work.'],
   ['Lena Fischer','Director of photography','c_curly','Designs the light and camera language that gives each project its look.'],
-  ['Kwame Asante','Editor','c_dark','Finds the story in the footage and builds the rhythm that holds attention.'],
+  ['Kwame Asante','Editor','h_charles_p','Finds the story in the footage and builds the rhythm that holds attention.'],
   ['Sofia Reyes','Colourist','c_bob','Grades every frame so a film feels like one world from first shot to last.'],
   ['Mira Haddad','Photographer','c_hat','Shoots campaign, product and interiors stills that sit naturally beside the films.'],
   ['Jide Bankole','Sound designer','c_curlyg','Builds the mix, the atmosphere and the details people feel before they notice.']
 ];
+const AVATARS = ['a_street','a_head','a_bwhat'];
+const STATS = [[120,'+','Projects delivered'],[14,'','Countries filmed in'],[9,'','Years behind the camera'],[98,'%','Clients who came back']];
 const QUOTES = [
   ['Troshot understood the brief better than we did. A year later, people inside the company still send the film around.','Priya Natarajan','Head of Brand, Lumen Audio'],
   ['Calm on set, obsessive in the edit. They found a version of the song I didn\u2019t know was there.','Kofi Laine','Recording artist'],
@@ -773,10 +995,10 @@ const cardHTML = (p, o = {}) => `
   </a>`;
 const thanksHTML = (title = 'Let\u2019s talk', line = 'For new projects, email', script = 'Got a story?') => `
   <section class="cta2" data-scene="signal">
-    <figure class="ph ph1" data-parallax="-70">${media('p_ali')}<figcaption class="fol">Side B | 2025</figcaption></figure>
-    <figure class="ph ph2" data-parallax="50">${media('p_red')}<figcaption class="fol">Afterhours | 2025</figcaption></figure>
-    <figure class="ph ph3" data-parallax="90">${media('p_walk')}<figcaption class="fol">Second Skin | 2024</figcaption></figure>
-    <figure class="ph ph4" data-parallax="-40">${media('p_fezbot')}<figcaption class="fol">Static &amp; Soul | 2026</figcaption></figure>
+    <figure class="ph ph1" data-parallax="-70">${media('p_ali_p')}<figcaption class="fol">Side B | 2025</figcaption></figure>
+    <figure class="ph ph2" data-parallax="50">${media('h_ivana_p')}<figcaption class="fol">Say It Loud | 2024</figcaption></figure>
+    <figure class="ph ph3" data-parallax="90">${media('h_kal_p')}<figcaption class="fol">Second Skin | 2024</figcaption></figure>
+    <figure class="ph ph4" data-parallax="-40">${media('h_brooke_p')}<figcaption class="fol">Still Life | 2026</figcaption></figure>
     <div class="in"><span class="script" aria-hidden="true">${script}</span><h2 data-split class="${title.length > 11 ? 'long' : ''}">${title}</h2>
       <p>${line}: <a href="mailto:hello@troshotmedia.com">hello@troshotmedia.com</a></p>
       ${btn('Start a project', '#/contact')}</div>
@@ -789,9 +1011,9 @@ const quotesHTML = () => `
     <div class="q-wrap">
       <div><p class="hash" style="font-size:clamp(44px,5vw,84px)">#kindwords</p>
         <div class="q-nav"><button class="sq prev" type="button" aria-label="Previous quote"><span></span></button><button class="sq next" type="button" aria-label="Next quote"><span></span></button><span class="fol q-count">01 / 0${QUOTES.length}</span></div></div>
-      <div class="q-stage" aria-live="polite">${QUOTES.map((q, i) => `<figure class="q ${i ? '' : 'on'}"><blockquote>\u201C${q[0]}\u201D</blockquote><figcaption><strong>${q[1]}</strong>, ${q[2]}</figcaption></figure>`).join('')}</div>
+      <div class="q-stage" aria-live="polite">${QUOTES.map((q, i) => `<figure class="q ${i ? '' : 'on'}"><blockquote>\u201C${q[0]}\u201D</blockquote><figcaption><img class="av" data-img="${AVATARS[i]}" alt=""><span><strong>${q[1]}</strong><br>${q[2]}</span></figcaption></figure>`).join('')}</div>
     </div>
-    <ul class="clients" aria-label="Clients">${CLIENTS.map((c, i) => `<li class="${i % 2 ? 'alt' : ''}">${c}</li>`).join('')}</ul>
+    <ul class="stats" aria-label="Studio in numbers">${STATS.map(s => `<li data-up><span class="n"><b data-count="${s[0]}">0</b>${s[1]}</span><span class="fol">${s[2]}</span></li>`).join('')}</ul>
   </section>`;
 const mqItems = arr => arr.map(t => `<span class="mq-item">${t}${AP}</span>`).join('');
 const pageHead = (scene, script, title, intro, extra = '') => `
@@ -804,23 +1026,28 @@ const MOOD_CROPS = [['30% 40%', 1.7], ['70% 30%', 2.0], ['50% 60%', 1.4], ['20% 
    ========================================================= */
 const PAGES = {
   home: { label: 'Troshot', title: 'Troshot Media | Films, commercials and photography', html: () => `
-    <section class="hero" data-scene="dark">
-      ${media('p_fezbot', { vid: 'hero', px: true })}
-      <div class="hero-shade"></div>
-      <div class="vf" aria-hidden="true">
+    <section class="hero cam" data-scene="dark" aria-label="Troshot Media showreel preview">
+      <div class="cam-feed" aria-hidden="true"><img class="shot" alt=""><img class="shot" alt=""><video class="shot vshot" muted playsinline preload="none"></video></div>
+      <div class="cam-shade"></div>
+      <div class="cam-ui" aria-hidden="true">
         <span class="corner c-tl"></span><span class="corner c-tr"></span><span class="corner c-bl"></span><span class="corner c-br"></span>
+        <span class="guide g-t"></span><span class="guide g-b"></span>
+        <div class="af"><span class="af-box"></span><span class="af-tag fol">AF</span></div>
         <div class="hud hud-tl fol"><span class="rec"><i></i>REC</span><span id="tc">00:00:00:00</span></div>
-        <div class="hud hud-tr fol"><span>4K</span><span>24 FPS</span><span class="batt"></span></div>
-        <div class="hud hud-bl fol"><span>f/1.8</span><span>1/50</span><span>ISO 800</span></div>
+        <div class="hud hud-tr fol"><span id="sctk">SC 12 | TK 01</span><span>4K 24P</span><span class="batt"></span></div>
+        <div class="meters"><div class="mt"><i></i></div><div class="mt"><i></i></div><span class="fol">L R</span></div>
+        <div class="hud hud-br fol"><span>F1.8</span><span>1/50</span><span>ISO 800</span><span>5600K</span></div>
+        <div class="cut-flash"></div>
       </div>
-      <div class="hero-inner">
+      <div class="hero-copy">
         <p class="hero-kicker" aria-hidden="true">Find your story</p>
         <h1 class="wordmark" aria-label="Troshot Media" tabindex="-1">${'TROSHOT'.split('').map(c => `<span class="l" aria-hidden="true">${c}</span>`).join('')}</h1>
-        <div class="hero-foot">
-          <div class="meta"><span class="fol">Brand films | Commercials | Photography</span><p class="lead">Written, shot and finished under one roof. We make films for brands and artists who want to be felt, not just seen.</p></div>
-          <div class="hero-ctas">${btn('See the work', '#/work')}<button class="btn btn-line btn-play" type="button" data-reel><span class="tri" aria-hidden="true"></span><span>Play showreel</span></button></div>
-        </div>
+        <div class="hero-ctas" data-enter>${btn('See the work', '#/work')}<button class="btn btn-line btn-play" type="button" data-reel><span class="tri" aria-hidden="true"></span><span>Play showreel</span></button></div>
       </div>
+    </section>
+    <section class="logos" data-scene="dark" aria-label="Clients">
+      <p class="fol">Trusted by brands and artists</p>
+      <div class="mq-row"><div class="mq-track">${CLIENTS.map((c, i) => `<span class="logo-i ${i % 2 ? 'alt' : ''}">${c}</span>`).join('')}</div></div>
     </section>
     <section class="statement" data-scene="paper" aria-label="About">
       <div class="aside"><span class="dotline"></span><p>A production house for brands, artists and storytellers.</p></div>
@@ -828,14 +1055,15 @@ const PAGES = {
     </section>
     <section class="reel" data-scene="dark" aria-label="Showreel">
       <div class="reel-frame on-image" data-reel data-cursor="Play">
-        ${media('p_ali', { vid: 'reel', scrim: true })}
+        ${media('h_office_l', { vid: 'reel', scrim: true })}
+        <div class="reel-run" aria-hidden="true"><div class="mq-track">${'<span>Watch our reel</span><i></i>'.repeat(4)}</div></div>
         <div class="reel-ui"><div class="reel-top fol"><span>Troshot Media | Showreel 2026</span><span>Directed by Amara Bello and Ruben Cole</span></div>
-          <div class="reel-bot"><span class="reel-title" data-parallax="40">Showreel</span><button class="btn btn-play" type="button" data-reel><span class="tri" aria-hidden="true"></span><span>Play showreel</span></button></div></div>
+          <div class="reel-bot"><span class="reel-title">Showreel 2026</span><button class="btn btn-play" type="button" data-reel><span class="tri" aria-hidden="true"></span><span>Play showreel</span></button></div></div>
       </div>
     </section>
     <section class="work-reel" data-scene="dark">
       <div class="work-head"><h2 class="sec-title" data-split>Selected work</h2>
-        <div class="meta">${btn('All projects', '#/work', 'btn-line btn-sm')}<div class="playhead"><span></span></div></div></div>
+        <div class="meta">${btn('All projects', '#/work', 'btn-line btn-sm')}<span class="swipe-hint fol">Swipe <i></i></span><div class="playhead"><span></span></div></div></div>
       <div class="work-track">${PROJECTS.slice(0, 6).map(p => cardHTML(p)).join('')}
         <a class="card card-end" href="#/work" data-cursor="Open"><span class="fol">${PROJECTS.length} projects | 2024 to 2026</span><span class="display">See all work</span></a></div>
     </section>
@@ -844,15 +1072,20 @@ const PAGES = {
       <div class="mq-row outline"><div class="mq-track">${mqItems(['Documentary','Photography','Colour'])}</div></div>
     </section>
     <section class="list-sec" data-scene="paper">
-      <div class="sec-head"><h2 class="sec-title" data-split>What we make</h2><p>One team from the first idea to the final export. No hand-offs, no lost intent between agencies.</p></div>
-      <ul class="svc-list" data-hover-list>${SERVICES.map(s => `<li><a class="svc" href="#/services/${s.slug}" data-still="${s.img}"><h3>${s.name}</h3><p>${s.short}</p><span class="arw" aria-hidden="true"></span></a></li>`).join('')}</ul>
+      <div class="sec-head"><h2 class="sec-title" data-split>What we make</h2><p data-up>One team from the first idea to the final export. No hand-offs, no lost intent between agencies.</p></div>
+      <div class="scards">${SERVICES.map((s, i) => `
+        <article class="scard t${i % 4}" style="--i:${i}">
+          <div class="sc-copy"><span class="sc-num">0${i + 1}</span><h3>${s.name}</h3><p>${s.long}</p>
+            <ul class="tags">${s.deliv.slice(0, 3).map(d => `<li>${d}</li>`).join('')}</ul>${btn('Explore ' + s.name.toLowerCase(), '#/services/' + s.slug, 'btn-sm')}</div>
+          ${media(s.img, { cls: 'sc-img' })}
+        </article>`).join('')}</div>
     </section>
     <section class="set" data-scene="caramel">
       <div class="sec-head"><h2 class="sec-title" data-split>From the set</h2><p>Frames and portraits from recent shoots, straight out of the grade.</p></div>
       <div class="set-grid">
-        <div class="set-col" data-parallax="-30">${media('p_head')}${media('setlight')}${media('p_bwhat')}</div>
-        <div class="set-col" data-parallax="40">${media('p_stairs')}${media('p_suits')}${media('room')}</div>
-        <div class="set-col" data-parallax="-60">${media('p_ayo')}${media('lamp', { imgStyle: 'transform:scale(1.4);transform-origin:25% 50%' })}${media('p_street')}</div>
+        <div class="set-col" data-parallax="-30">${media('h_gear_l')}${media('h_jordan_p')}${media('setlight')}</div>
+        <div class="set-col" data-parallax="40">${media('h_office_l')}${media('h_charles_p')}${media('h_meeting_l')}</div>
+        <div class="set-col" data-parallax="-60">${media('h_intro_l')}${media('h_kal_p')}${media('h_annie_l')}</div>
       </div>
     </section>
     ${quotesHTML()}
@@ -920,14 +1153,25 @@ const PAGES = {
         </article>`).join('')}</div>
     </section>
     ${stepsHTML()}
+    <section class="plans-sec" data-scene="paper">
+      <div class="sec-head"><h2 class="sec-title" data-split>Ways to work with us</h2><p data-up>Starting points, not fixed menus. Every quote is built around your brief. All prices in USD.</p></div>
+      <div class="plans">${PLANS.map((p, i) => `
+        <article class="plan ${i === 1 ? 'hot' : ''}" data-up>
+          <div class="pl-top"><h3>${p[0]}</h3>${i === 1 ? '<span class="fol pl-tag">Most booked</span>' : ''}</div>
+          <p>${p[1]}</p>
+          <div class="price"><span class="fol">From</span><b>${p[2]}</b><span class="fol">${p[3]}</span></div>
+          <ul>${p[4].map(f => `<li>${f}</li>`).join('')}</ul>
+          ${btn('Ask about ' + p[0].toLowerCase(), '#/contact', i === 1 ? '' : 'btn-line')}
+        </article>`).join('')}</div>
+    </section>
     <section class="faq" data-scene="paper"><div class="sec-head"><h2 class="sec-title" data-split>Questions we get asked</h2><p>Anything else, ask us directly. We answer every enquiry.</p></div>
-      <div class="faq-list">${FAQ.map((f, i) => `<div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-${i}"><span>${f[0]}</span><span class="faq-icon" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-${i}" hidden><p>${f[1]}</p></div></div>`).join('')}</div>
+      <div class="faq-list">${FAQ.map((f, i) => `<div class="faq-item"><h3><button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-${i}"><span class="faq-n fol">0${i + 1}</span><span class="faq-t">${f[0]}</span><span class="faq-icon" aria-hidden="true"></span></button></h3><div class="faq-a" id="faq-${i}" hidden><p>${f[1]}</p></div></div>`).join('')}</div>
     </section>
     ${thanksHTML()}` },
 
   studio: { label: 'Studio', title: 'Studio | Troshot Media', html: () => `
     ${pageHead('caramel', 'Meet the', 'Studio', 'Eight people, one room, and the belief that the best work comes from the same team taking an idea all the way to the screen.')}
-    <section class="band" data-scene="caramel">${media('setlight', { px: true, cls: 'on-image', extra: '<span class="fol cap">On set | Stage 2, March 2026</span>' })}</section>
+    <section class="band" data-scene="caramel">${media('h_annie_l', { px: true, cls: 'on-image', extra: '<span class="fol cap">In the studio | Edit week, March 2026</span>' })}</section>
     <section class="principles" data-scene="caramel"><h2 class="sec-title" data-split>How we work</h2>
       <div class="pr-grid">
         <article class="pr"><h3>Story first</h3><p>Before kit, locations or style, we agree on what the audience should feel. Every later decision answers to that.</p></article>
@@ -942,34 +1186,55 @@ const PAGES = {
     ${thanksHTML('Join us', 'For projects and collaborations, email', 'Work with us?')}` },
 
   contact: { label: 'Contact', title: 'Start a project | Troshot Media', html: () => `
-    <section class="contact-hero" data-scene="signal">
-      <div class="in"><span class="script" aria-hidden="true" style="position:relative;left:auto;top:auto;margin-bottom:-.5em">Start a project</span><h1 data-split="hero" tabindex="-1">Let\u2019s talk</h1>
-        <p class="lead" data-enter>Tell us what you\u2019re making. The more we know, the better our first reply will be.</p></div>
+    <section class="ct-hero" data-scene="dark">
+      <div class="ct-left">
+        <span class="script" aria-hidden="true" style="position:relative;left:auto;top:auto;display:block;margin-bottom:-.42em">Let\u2019s talk</span>
+        <h1 data-split="hero" tabindex="-1">Start a project</h1>
+        <p class="lead" data-enter>Tell us what you\u2019re making. A producer, not a sales team, will reply within two working days.</p>
+        <div class="ct-quick" data-enter>
+          <button class="ct-row" type="button" data-copy-email><span class="fol k">Email</span><span class="v">hello@troshotmedia.com</span><span class="cp fol">Copy</span></button>
+          <a class="ct-row" href="tel:+10000000000"><span class="fol k">Phone</span><span class="v">+1 (000) 000 0000</span><span class="fol go">Call</span></a>
+          <div class="ct-row static"><span class="fol k">Studio time</span><span class="v"><b id="clock">--:--</b> GMT+1</span><span class="fol live"><i></i><span id="open">Open now</span></span></div>
+        </div>
+      </div>
+      <div class="ct-right" data-enter>
+        ${media('h_gear_l', { px: true, cls: 'ct-img' })}
+        <figure class="producer">${media('c_precious')}<figcaption><span class="fol">Your first call</span><strong>Precious Owei</strong><span>Executive producer</span></figcaption></figure>
+      </div>
     </section>
-    <section class="contact-grid" data-scene="paper">
+    <section class="ct-form-sec" data-scene="paper">
+      <aside class="ct-next">
+        <span class="fol">What happens next</span>
+        <ol>
+          <li><span class="n">01</span><div><h3>We read every brief</h3><p>A producer replies within two working days with questions or a time to talk.</p></div></li>
+          <li><span class="n">02</span><div><h3>A 30-minute call</h3><p>We talk through the idea, the audience and where the film will live.</p></div></li>
+          <li><span class="n">03</span><div><h3>Treatment and quote</h3><p>Within a week you get a written treatment, a schedule and a fixed quote.</p></div></li>
+        </ol>
+        <div class="ct-social"><span class="fol">Follow</span><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Vimeo</a></div>
+      </aside>
       <div class="form-wrap">
-        <form class="form" novalidate>
-          <div class="row2">
-            <div class="field"><label class="fol" for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" aria-describedby="e-name"><p class="err" id="e-name"></p></div>
-            <div class="field"><label class="fol" for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="e-email"><p class="err" id="e-email"></p></div>
-          </div>
-          <div class="field"><label class="fol" for="f-co">Company or artist name (optional)</label><input id="f-co" name="company" autocomplete="organization"></div>
-          <fieldset class="field" aria-describedby="e-type"><legend class="fol">What do you need?</legend>
-            <div class="opts">${[...CATS, 'Post-production'].map(c => `<label class="opt"><input type="checkbox" name="type" value="${c}"><span>${c}</span></label>`).join('')}</div><p class="err" id="e-type"></p></fieldset>
-          <fieldset class="field"><legend class="fol">Budget range (USD)</legend>
-            <div class="opts">${['Under 5k','5k to 15k','15k to 50k','50k and up','Not sure yet'].map((b, i) => `<label class="opt"><input type="radio" name="budget" value="${b}" ${i === 4 ? 'checked' : ''}><span>${b}</span></label>`).join('')}</div></fieldset>
-          <div class="field"><label class="fol" for="f-time">Timeline</label><div class="select-wrap"><select id="f-time" name="timeline"><option>As soon as possible</option><option>Within a month</option><option selected>In one to three months</option><option>Just exploring</option></select></div></div>
-          <div class="field"><label class="fol" for="f-msg">About the project</label><textarea id="f-msg" name="message" aria-describedby="e-msg" placeholder="What it is, who it\u2019s for and where it will run."></textarea><p class="err" id="e-msg"></p></div>
+        <form class="form ct-card" novalidate>
+          <div class="ct-progress"><div class="playhead"><span></span></div><span class="fol ct-pct">0% complete</span></div>
+          <fieldset class="grp"><legend class="grp-h"><span class="n">01</span>About you</legend>
+            <div class="row2">
+              <div class="field"><label class="fol" for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" aria-describedby="e-name"><p class="err" id="e-name"></p></div>
+              <div class="field"><label class="fol" for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" aria-describedby="e-email"><p class="err" id="e-email"></p></div>
+            </div>
+            <div class="field"><label class="fol" for="f-co">Company or artist name (optional)</label><input id="f-co" name="company" autocomplete="organization"></div>
+          </fieldset>
+          <fieldset class="grp"><legend class="grp-h"><span class="n">02</span>The project</legend>
+            <fieldset class="field" aria-describedby="e-type"><legend class="fol">What do you need?</legend>
+              <div class="opts">${[...CATS, 'Post-production'].map(c => `<label class="opt"><input type="checkbox" name="type" value="${c}"><span>${c}</span></label>`).join('')}</div><p class="err" id="e-type"></p></fieldset>
+            <div class="field"><label class="fol" for="f-msg">About the project</label><textarea id="f-msg" name="message" aria-describedby="e-msg f-cnt" placeholder="What it is, who it\u2019s for and where it will run."></textarea><span class="fol cnt" id="f-cnt">0 characters, 20 minimum</span><p class="err" id="e-msg"></p></div>
+          </fieldset>
+          <fieldset class="grp"><legend class="grp-h"><span class="n">03</span>Budget and timing</legend>
+            <fieldset class="field"><legend class="fol">Budget range (USD)</legend>
+              <div class="opts">${['Under 5k','5k to 15k','15k to 50k','50k and up','Not sure yet'].map((b, i) => `<label class="opt"><input type="radio" name="budget" value="${b}" ${i === 4 ? 'checked' : ''}><span>${b}</span></label>`).join('')}</div></fieldset>
+            <div class="field"><label class="fol" for="f-time">Timeline</label><div class="select-wrap"><select id="f-time" name="timeline"><option>As soon as possible</option><option>Within a month</option><option selected>In one to three months</option><option>Just exploring</option></select></div></div>
+          </fieldset>
           <div class="form-foot"><button class="btn" type="submit"><span>Send by email</span>${ICO}</button><p>This opens your email app with everything filled in, ready to send.</p></div>
         </form>
       </div>
-      <aside class="contact-aside">
-        <div><h2 class="fol br">Email</h2><a href="mailto:hello@troshotmedia.com">hello@troshotmedia.com</a></div>
-        <div><h2 class="fol br">Phone</h2><a href="tel:+10000000000">+1 (000) 000 0000</a></div>
-        <div><h2 class="fol br">Reply time</h2><p>Within two working days</p></div>
-        <div><h2 class="fol br">Studio hours</h2><p>Monday to Friday, 9am to 6pm</p></div>
-        <div><h2 class="fol br">Follow</h2><a href="#">Instagram</a><a href="#">YouTube</a><a href="#">Vimeo</a></div>
-      </aside>
     </section>` },
 
   notfound: { label: 'Not found', title: 'Page not found | Troshot Media', html: () => `
@@ -1033,7 +1298,7 @@ if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 
 let lenis = null;
 if (window.Lenis && !reduce) {
-  lenis = new Lenis({ lerp: 0.09 });
+  lenis = new Lenis({ lerp: 0.075, wheelMultiplier: .95 });
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add(t => lenis.raf(t * 1000));
   gsap.ticker.lagSmoothing(0);
@@ -1093,7 +1358,7 @@ const mmss = s => `${String(Math.floor(s / 60)).padStart(2, '0')}:${String(Math.
 const setPP = playing => { ppBtn.innerHTML = playing ? '<span class="bars"><i></i><i></i></span>' : '<span class="tri"></span>'; ppBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play'); };
 function openPlayer() {
   lastFocus = document.activeElement;
-  screen.innerHTML = `<img src="${A.img.p_ali}" alt=""><video playsinline muted></video>`;
+  screen.innerHTML = `<img src="${A.img.h_office_l}" alt=""><video playsinline muted></video>`;
   pv = $('video', screen);
   pv.addEventListener('timeupdate', () => { const p = pv.currentTime / (pv.duration || 1); fill.style.width = p * 100 + '%'; ptime.textContent = `${mmss(pv.currentTime)} / ${mmss(pv.duration || 0)}`; track.setAttribute('aria-valuenow', Math.round(p * 100)); });
   pv.addEventListener('play', () => setPP(true)); pv.addEventListener('pause', () => setPP(false));
@@ -1125,6 +1390,25 @@ document.addEventListener('keydown', e => {
   }
 });
 document.addEventListener('click', e => { if (e.target.closest('[data-reel]')) { e.preventDefault(); openPlayer(); } });
+
+/* Rolling labels: the text slides up and a copy rolls in on hover */
+function rollify(scope) {
+  $$('.btn > span:not(.ico):not(.tri), .nav-links a', scope).forEach(el => {
+    if (el.querySelector('.roll') || el.closest('.roll')) return;
+    const t = el.textContent; if (!t.trim()) return;
+    el.innerHTML = `<span class="roll"><span class="r1">${t}</span><span class="r2" aria-hidden="true">${t}</span></span>`;
+  });
+}
+rollify(document);
+
+/* Copy the studio email with a short confirmation */
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-copy-email]'); if (!b) return;
+  const cp = $('.cp', b);
+  try { await navigator.clipboard.writeText('hello@troshotmedia.com'); cp.textContent = 'Copied'; }
+  catch { cp.textContent = 'Select to copy'; }
+  b.classList.add('done'); setTimeout(() => { cp.textContent = 'Copy'; b.classList.remove('done'); }, 2000);
+});
 
 /* ---------- Footer ---------- */
 const footMark = $('.foot-mark'), footOutline = $('.foot-mark .outline');
@@ -1160,6 +1444,7 @@ function makeApi() {
 
 function commonInit(api) {
   hydrate(view);
+  rollify(view);
   $$('[data-split="hero"]', view).forEach(el => api.enter.from(splitWords(el), { yPercent: 115, duration: 1.25, ease: 'expo.out', stagger: .07 }, .05));
   $$('.page-head .script, .slide-title .script, .contact-hero .script', view).forEach(el => api.enter.fromTo(el, { clipPath: 'inset(-40% 100% -40% -10%)' }, { clipPath: 'inset(-40% -15% -40% -10%)', duration: 1.2, ease: 'power2.inOut' }, .5));
   const enterEls = $$('[data-enter]', view);
@@ -1174,22 +1459,45 @@ function commonInit(api) {
     if (en.isIntersecting) playVideo(v); else if (v.dataset.loaded) v.pause();
   }), { rootMargin: '120px' });
   api.cleanups.push(() => io.disconnect());
+  const touchIo = new IntersectionObserver(entries => entries.forEach(en => {
+    const v = en.target;
+    if (en.isIntersecting) playVideo(v); else if (v.dataset.loaded) { v.pause(); v.classList.remove('on'); }
+  }), { threshold: .7 });
+  api.cleanups.push(() => touchIo.disconnect());
   $$('video[data-vid]', view).forEach(v => {
     if (v.hasAttribute('data-hover')) {
-      if (!fine || reduce) return;
+      if (reduce) return;
+      if (!fine) { touchIo.observe(v); return; }
       const host = v.closest('.card');
       api.on(host, 'pointerenter', () => playVideo(v));
       api.on(host, 'pointerleave', () => { v.pause(); v.classList.remove('on'); });
     } else if (!reduce) io.observe(v);
   });
   if (!reduce) {
-    $$('[data-parallax]', view).forEach(el => { const n = parseFloat(el.dataset.parallax); gsap.fromTo(el, { y: -n }, { y: n, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } }); });
+    $$('[data-parallax]', view).forEach(el => { if (innerWidth < 900 && el.closest('.cta2')) return; const n = parseFloat(el.dataset.parallax); gsap.fromTo(el, { y: -n }, { y: n, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } }); });
     $$('[data-img-parallax]', view).forEach(el => { if (el.closest('.work-reel')) return; gsap.fromTo($('.px', el), { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } }); });
     $$('[data-reveal]', view).forEach(el => gsap.fromTo(el, { clipPath: 'inset(6% 4% 6% 4%)' }, { clipPath: 'inset(0% 0% 0% 0%)', ease: 'none', scrollTrigger: { trigger: el, start: 'top 95%', end: 'top 45%', scrub: true } }));
     $$('.thanks > .media img', view).forEach(im => gsap.fromTo(im, { scale: 1.2 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: im.closest('.thanks'), start: 'top bottom', end: 'bottom bottom', scrub: true } }));
   }
   $$('[data-hover-list]', view).forEach(list => hoverList(list, api));
   initMarquees(api); initStrip(api); initQuotes(api);
+  // Soft blur-up reveals, batched so neighbours arrive in sequence
+  $$('.sec-head p, .board .card, .member, .pr, .svc-block .tags, .cs-col, .step, .plan, .faq-item, .contact-aside > div', view).forEach(el => el.setAttribute('data-up', ''));
+  const ups = $$('[data-up]', view).filter(el => !el.closest('.work-reel'));
+  if (!reduce && ups.length) {
+    gsap.set(ups, { opacity: 0, y: 28, filter: 'blur(10px)' });
+    ScrollTrigger.batch(ups, { start: 'top 92%', once: true, onEnter: b => gsap.to(b, { opacity: 1, y: 0, filter: 'blur(0px)', duration: 1.1, ease: 'expo.out', stagger: .08, overwrite: true, clearProps: 'filter,transform' }) });
+  }
+  // Count-up numbers
+  $$('[data-count]', view).forEach(el => {
+    const target = +el.dataset.count;
+    if (reduce) { el.textContent = target; return; }
+    ScrollTrigger.create({ trigger: el, start: 'top 90%', once: true, onEnter: () => { const o = { v: 0 }; gsap.to(o, { v: target, duration: 1.8, ease: 'power2.out', onUpdate: () => { el.textContent = Math.round(o.v); } }); } });
+  });
+  // Stacking service cards: each card settles back as the next one slides over it
+  const cards = $$('.scard', view);
+  if (!reduce && innerWidth >= 900) cards.forEach((c, i) => { const nx = cards[i + 1]; if (!nx) return;
+    gsap.to(c, { scale: .93, filter: 'brightness(.62)', ease: 'none', scrollTrigger: { trigger: nx, start: 'top bottom', end: 'top 30%', scrub: true } }); });
 }
 
 function hoverList(list, api) {
@@ -1243,46 +1551,136 @@ const INIT = {
     const tc = $('#tc', view), t0 = performance.now(); let lf = -1;
     api.tick(() => { const f = Math.floor((performance.now() - t0) / (1000 / 24)); if (f !== lf) { tc.textContent = fmt(f); lf = f; } });
     let heroVisible = true;
-    const io = new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; }); io.observe(hero); api.cleanups.push(() => io.disconnect());
 
-    // Focus pull on the wordmark
-    const wordmark = $('.wordmark', view), letters = $$('.l', wordmark);
+    // TROSHOT wordmark: fitted to the frame, with a focus pull that follows the cursor
+    const wordmark = $('.wordmark', hero), letters = $$('.l', wordmark);
     const fit = () => { wordmark.style.fontSize = ''; const avail = wordmark.clientWidth * .97; const used = letters.reduce((a, l) => a + l.getBoundingClientRect().width, 0); if (used > avail) wordmark.style.fontSize = (parseFloat(getComputedStyle(wordmark).fontSize) * avail / used) + 'px'; };
     fit(); api.on(window, 'resize', fit); if (document.fonts) document.fonts.ready.then(() => { if (wordmark.isConnected) fit(); });
-    let live = false, hasMouse = false, fx = 0, fy = 0, ftx = 0, fty = 0, init = false;
-    api.on(window, 'pointermove', e => { if (e.pointerType === 'mouse') { hasMouse = true; ftx = e.clientX; fty = e.clientY; } }, { passive: true });
+    let live = false, hasMouse = false, wfx = 0, wfy = 0, wtx = 0, wty = 0, winit = false;
+    api.on(window, 'pointermove', e => { if (e.pointerType === 'mouse') { hasMouse = true; wtx = e.clientX; wty = e.clientY; } }, { passive: true });
+    let wTick = 0; const maxBlur = fine ? 8 : 5;
     if (!reduce) api.tick(time => {
       if (!live || !heroVisible) return;
+      if (!fine && (wTick++ % 2)) return;
       const r = wordmark.getBoundingClientRect();
-      if (!hasMouse) { ftx = r.left + r.width * (.5 + .48 * Math.sin(time / 1.7)); fty = r.top + r.height / 2; }
-      if (!init) { fx = ftx; fy = fty; init = true; }
-      fx += (ftx - fx) * .09; fy += (fty - fy) * .09;
+      if (!hasMouse) { wtx = r.left + r.width * (.5 + .48 * Math.sin(time / 1.7)); wty = r.top + r.height / 2; }
+      if (!winit) { wfx = wtx; wfy = wty; winit = true; }
+      wfx += (wtx - wfx) * .09; wfy += (wty - wfy) * .09;
       letters.forEach(l => {
         const b = l.getBoundingClientRect();
-        const d = Math.hypot(b.left + b.width / 2 - fx, (b.top + b.height / 2 - fy) * .5);
-        const blur = Math.max(0, Math.min(8, (d - b.width * .55) / (b.width * 1.1) * 3));
+        const d = Math.hypot(b.left + b.width / 2 - wfx, (b.top + b.height / 2 - wfy) * .5);
+        const blur = Math.max(0, Math.min(maxBlur, (d - b.width * .55) / (b.width * 1.1) * 3));
         l.style.filter = blur > .05 ? `blur(${blur.toFixed(2)}px)` : 'none';
         l.style.opacity = (1 - blur / 24).toFixed(3);
       });
     });
+
+    /* The camera: cut to a take, hunt for focus, lock on the subject, roll, cut again.
+       Emotional moments come first. Video takes play real footage; stills get a slow push-in. */
+    const PX = 'https://videos.pexels.com/video-files/';
+    const SHOTS = [
+      { vid: [PX + '7712349/7712349-hd_1280_720_30fps.mp4', PX + '7712349/7712349-hd_1920_1080_30fps.mp4'], start: 1, fx: .5, fy: .35 },
+      { img: 'm_victory', fx: .66, fy: .58 },
+      { vid: [PX + '12597486/12597486-hd_1280_720_25fps.mp4', PX + '12597486/12597486-hd_1920_1080_25fps.mp4'], start: 2, fx: .5, fy: .38 },
+      { img: 'm_runway', fx: .59, fy: .47 },
+      { img: 'm_doc', fx: .5, fy: .43 },
+      { img: 'm_model', fx: .3, fy: .33 },
+      { img: 'm_live', fx: .62, fy: .62 },
+      { img: 'm_race', fx: .5, fy: .14 },
+      { vid: [A.vid.city || '/assets/vid/city.mp4'], start: 0, fx: .5, fy: .5 },
+      { img: 'm_wedding2', fx: .68, fy: .22 },
+      { img: 'm_match', fx: .32, fy: .26 }
+    ];
+    SHOTS.forEach(s => { if (s.img) { const pre = new Image(); pre.src = A.img[s.img]; } });
+    const feed = $('.cam-feed', hero), layers = $$('img.shot', feed), vlayer = $('.vshot', feed), af = $('.af', hero), afTag = $('.af-tag', hero), flash = $('.cut-flash', hero), sctk = $('#sctk', hero);
+    const deadVids = new Set();
+    let shotIdx = 0, take = 0, layer = 0, shotTl = null;
+    const focusPoint = (el, s, scale) => {
+      const cw = feed.clientWidth, ch = feed.clientHeight;
+      const iw = el.naturalWidth || el.videoWidth || 1600, ih = el.naturalHeight || el.videoHeight || 900;
+      const k = Math.max(cw / iw, ch / ih), dw = iw * k, dh = ih * k;
+      const px = (cw - dw) * s.fx + s.fx * dw, py = (ch - dh) * s.fy + s.fy * dh;
+      return { x: cw / 2 + (px - cw / 2) * scale, y: ch / 2 + (py - ch / 2) * scale };
+    };
+    // Try each source in turn; resolve when the clip is actually playing, reject if it never starts
+    const startVideo = s => new Promise((resolve, reject) => {
+      const srcs = s.vid.filter(u => u && !deadVids.has(u));
+      let i = 0, timer = null;
+      const clean = () => { clearTimeout(timer); vlayer.onplaying = null; vlayer.onerror = null; };
+      const tryNext = () => {
+        if (i >= srcs.length) { clean(); reject(); return; }
+        const u = srcs[i++];
+        vlayer.onerror = () => { deadVids.add(u); tryNext(); };
+        vlayer.onplaying = () => { clean(); resolve(); };
+        clearTimeout(timer); timer = setTimeout(() => { deadVids.add(u); tryNext(); }, 4000);
+        vlayer.src = u; vlayer.load();
+        vlayer.addEventListener('loadedmetadata', () => { try { vlayer.currentTime = s.start || 0; } catch {} }, { once: true });
+        const p = vlayer.play(); if (p) p.catch(() => {});
+      };
+      tryNext();
+    });
+    const roll = (el, s, isVideo) => {
+      take++;
+      sctk.textContent = `SC 12 | TK ${String(take).padStart(2, '0')}`;
+      gsap.set(el, { opacity: 1, zIndex: 3, scale: isVideo ? 1.08 : 1.14, x: 0, y: 0, rotation: 0, filter: 'blur(14px) brightness(.82)' });
+      layers.concat(vlayer).forEach(o => { if (o !== el) gsap.set(o, { opacity: 0, zIndex: 1 }); });
+      if (!isVideo) { vlayer.pause(); }
+      af.classList.remove('locked'); afTag.textContent = 'AF';
+      gsap.set(af, { left: feed.clientWidth / 2, top: feed.clientHeight / 2, opacity: 1, scale: 1.3 });
+      const fp = focusPoint(el, s, isVideo ? 1.06 : 1.1);
+      const dur = isVideo ? 6.2 : 5.4;
+      shotTl = gsap.timeline({ onComplete: () => { if (heroVisible) cut(); else shotTl = null; } })
+        .to(el, { scale: isVideo ? 1.02 : 1.04, duration: dur, ease: 'sine.inOut' }, 0)
+        .to(el, { x: '+=6', y: '-=4', rotation: .1, duration: 1.35, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 0)
+        .to(af, { left: fp.x, top: fp.y, scale: 1, duration: .8, ease: 'power3.inOut' }, .15)
+        .to(el, { filter: 'blur(4px) brightness(.95)', duration: .35, ease: 'power1.out' }, .35)
+        .to(el, { filter: 'blur(9px) brightness(.95)', duration: .25, ease: 'power1.in' }, .7)
+        .to(el, { filter: 'blur(0px) brightness(1)', duration: .5, ease: 'power2.out' }, .95)
+        .call(() => { af.classList.add('locked'); afTag.textContent = 'AF LOCK'; }, null, 1.45)
+        .to(af, { opacity: .35, duration: .6 }, 3.6)
+        .to({}, { duration: dur - 4.2 }, 4.2);
+    };
+    const playShot = () => {
+      const s = SHOTS[shotIdx % SHOTS.length]; shotIdx++;
+      if (s.vid) {
+        if (s.vid.every(u => !u || deadVids.has(u))) { playShot(); return; }
+        shotTl = gsap.timeline();          // placeholder so the observer doesn't double-start
+        startVideo(s).then(() => roll(vlayer, s, true)).catch(() => playShot());
+        return;
+      }
+      const img = layers[layer]; layer = 1 - layer;
+      img.src = A.img[s.img]; img.style.objectPosition = `${s.fx * 100}% ${s.fy * 100}%`;
+      roll(img, s, false);
+    };
+    const cut = () => {
+      gsap.timeline().to(flash, { opacity: 1, duration: .06 }).call(playShot).to(flash, { opacity: 0, duration: .16 }, '+=.08');
+    };
+    // Audio meters bounce like live sound
+    const bars = $$('.mt i', hero); let lv = [.4, .4];
+    // Reduced motion: one sharp still, no moving camera
+    if (reduce) { layers[0].src = A.img.m_victory; gsap.set(layers[0], { opacity: 1 }); af.classList.add('locked'); }
+    else {
+      api.tick(() => { if (!heroVisible) return; lv = lv.map(v => Math.max(.08, Math.min(1, v * .82 + Math.random() * .32))); bars.forEach((b, i) => { b.style.transform = `scaleY(${lv[i].toFixed(2)})`; }); });
+      api.cleanups.push(() => { shotTl && shotTl.kill(); vlayer.pause(); vlayer.removeAttribute('src'); });
+    }
+    const io = new IntersectionObserver(([e]) => {
+      heroVisible = e.isIntersecting;
+      if (!heroVisible) vlayer.pause(); else if (vlayer.src && !reduce && gsap.getProperty(vlayer, 'opacity') > 0) { const p = vlayer.play(); if (p) p.catch(() => {}); }
+      if (heroVisible && !reduce && !shotTl) playShot();
+    }); io.observe(hero); api.cleanups.push(() => io.disconnect());
+    if (!reduce && !shotTl) playShot();
+
     const tl = api.enter;
-    if (api.first && !reduce) {
-      tl.fromTo(hero, { clipPath: 'inset(50% 0% 50% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.4, ease: 'expo.inOut' }, 0)
-        .fromTo($('.media img', hero), { scale: 1.25 }, { scale: 1, duration: 2.2, ease: 'expo.out' }, .1);
-    }
-    const at = api.first && !reduce ? .8 : .05;
-    if (!reduce) {
-      tl.from(letters, { yPercent: 108, duration: 1.15, ease: 'expo.out', stagger: .055 }, at)
-        .fromTo($('.hero-kicker', view), { clipPath: 'inset(-40% 100% -40% -10%)' }, { clipPath: 'inset(-40% -15% -40% -10%)', duration: 1.2, ease: 'power2.inOut' }, at + .45)
-        .from($$('.vf > *', view), { opacity: 0, duration: .6, stagger: .05 }, at + .1)
-        .from($$('.hero-foot > *', view), { y: 24, opacity: 0, duration: .9, ease: 'power3.out', stagger: .1 }, at + .35);
-    }
+    if (api.first && !reduce) tl.fromTo(hero, { clipPath: 'inset(50% 0% 50% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.4, ease: 'expo.inOut' }, 0);
+    if (!reduce) tl.from($$('.cam-ui > *:not(.cut-flash):not(.af)', hero), { opacity: 0, duration: .6, stagger: .04 }, api.first ? .9 : .1);
+    if (!reduce) tl.from(letters, { yPercent: 108, duration: 1.15, ease: 'expo.out', stagger: .055 }, api.first ? .9 : .1)
+      .fromTo($('.hero-kicker', hero), { clipPath: 'inset(-40% 100% -40% -10%)' }, { clipPath: 'inset(-40% -15% -40% -10%)', duration: 1.3, ease: 'power2.inOut' }, api.first ? 1.4 : .6);
     tl.call(() => { hero.style.clipPath = 'none'; wordmark.classList.add('live'); live = true; });
     if (!reduce) {
       const st = { trigger: hero, start: 'top top', end: 'bottom top', scrub: true };
-      gsap.to($('.hero > .media', view), { yPercent: 22, ease: 'none', scrollTrigger: st });
-      gsap.to($('.hero-inner', view), { yPercent: -30, ease: 'none', scrollTrigger: { ...st } });
-      gsap.to($('.vf', view), { opacity: 0, ease: 'none', scrollTrigger: { ...st, end: '50% top' } });
+      gsap.to(feed, { yPercent: 18, ease: 'none', scrollTrigger: st });
+      gsap.to($('.hero-copy', view), { yPercent: -25, opacity: 0, ease: 'none', scrollTrigger: { ...st, end: '70% top' } });
+      gsap.to($('.cam-ui', view), { opacity: 0, ease: 'none', scrollTrigger: { ...st, end: '50% top' } });
       const big = $('.statement .big', view);
       big.innerHTML = big.textContent.trim().split(/\s+/).map(w => `<span class="w">${w}</span>`).join(' ');
       gsap.fromTo($$('.w', big), { opacity: .16 }, { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: big, start: 'top 82%', end: 'bottom 48%', scrub: true } });
@@ -1341,6 +1739,23 @@ const INIT = {
 
   contact(api) {
     const form = $('.form', view);
+    const clock = $('#clock', view), open = $('#open', view);
+    const tz = 'Africa/Lagos';
+    const fmtC = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: tz });
+    const parts = () => Object.fromEntries(new Intl.DateTimeFormat('en-GB', { weekday: 'short', hour: 'numeric', hour12: false, timeZone: tz }).formatToParts(new Date()).map(p => [p.type, p.value]));
+    const tickC = () => { clock.textContent = fmtC.format(new Date()); const p = parts(); const h = +p.hour, wk = !['Sat', 'Sun'].includes(p.weekday); const isOpen = wk && h >= 9 && h < 18; open.textContent = isOpen ? 'Open now' : 'Closed now'; open.parentElement.classList.toggle('off', !isOpen); };
+    tickC(); const ci = setInterval(tickC, 15000); api.cleanups.push(() => clearInterval(ci));
+    const bar = $('.ct-progress .playhead span', view), pct = $('.ct-pct', view), cnt = $('#f-cnt', view);
+    const progress = () => {
+      const fd = new FormData(form);
+      const done = [(fd.get('name') || '').trim().length > 0, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((fd.get('email') || '').trim()), fd.getAll('type').length > 0, (fd.get('message') || '').trim().length >= 20].filter(Boolean).length;
+      const p = Math.round(done / 4 * 100);
+      gsap.to(bar, { width: p + '%', duration: .6, ease: 'power3.out' });
+      pct.textContent = p === 100 ? 'Ready to send' : `${p}% complete`;
+      const n = (fd.get('message') || '').trim().length;
+      cnt.textContent = n >= 20 ? `${n} characters` : `${n} characters, 20 minimum`;
+    };
+    api.on(form, 'input', progress); api.on(form, 'change', progress); progress();
     const setErr = (input, id, msg) => { $('#' + id, view).textContent = msg; if (input) input.setAttribute('aria-invalid', msg ? 'true' : 'false'); return !msg; };
     api.on(form, 'submit', e => {
       e.preventDefault();
