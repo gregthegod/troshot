@@ -235,7 +235,7 @@ body::after{content:"";position:fixed;top:-50%;left:-50%;width:200%;height:200%;
 .mq-track{display:flex;flex:0 0 auto;will-change:transform}
 .mq-item{display:inline-flex;align-items:center;gap:clamp(24px,3vw,48px);padding-right:clamp(24px,3vw,48px);font-family:var(--display);font-size:clamp(64px,11vw,190px);line-height:1.02;text-transform:uppercase}
 .mq-item svg{width:.38em;height:.38em;color:var(--accent);flex:0 0 auto}
-.mq-row.outline .mq-item{color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--fg) 55%,transparent)}
+.mq-row.outline .mq-item{color:transparent;-webkit-text-stroke:2px color-mix(in srgb,var(--fg) 85%,transparent)}
 .marquee.small .mq-item{font-size:clamp(44px,6vw,96px)}
 .list-sec{padding:clamp(100px,16vh,180px) var(--pad)}
 .sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,38ch);gap:24px;align-items:end;margin-bottom:52px}
@@ -1170,9 +1170,9 @@ const PAGES = {
     ${thanksHTML()}` },
 
   studio: { label: 'Studio', title: 'Studio | Troshot Media', html: () => `
-    ${pageHead('caramel', 'Meet the', 'Studio', 'Eight people, one room, and the belief that the best work comes from the same team taking an idea all the way to the screen.')}
-    <section class="band" data-scene="caramel">${media('h_annie_l', { px: true, cls: 'on-image', extra: '<span class="fol cap">In the studio | Edit week, March 2026</span>' })}</section>
-    <section class="principles" data-scene="caramel"><h2 class="sec-title" data-split>How we work</h2>
+    ${pageHead('paper', 'Meet the', 'Studio', 'Eight people, one room, and the belief that the best work comes from the same team taking an idea all the way to the screen.')}
+    <section class="band" data-scene="paper">${media('h_annie_l', { px: true, cls: 'on-image', extra: '<span class="fol cap">In the studio | Edit week, March 2026</span>' })}</section>
+    <section class="principles" data-scene="paper"><h2 class="sec-title" data-split>How we work</h2>
       <div class="pr-grid">
         <article class="pr"><h3>Story first</h3><p>Before kit, locations or style, we agree on what the audience should feel. Every later decision answers to that.</p></article>
         <article class="pr"><h3>Small crews, real care</h3><p>Lean teams move faster, cost less and get closer to people. You get senior hands on every frame.</p></article>
@@ -1181,7 +1181,7 @@ const PAGES = {
     <section class="crew" data-scene="dark"><div class="sec-head"><h2 class="sec-title" data-split>The crew</h2><p>The people on every Troshot production, from first call to final export.</p></div>
       <div class="crew-grid">${CREW.map(c => `<article class="member">${media(c[2], { scrim: true, extra: `<span class="fol m-role">${c[1]}</span>` })}<h3>${c[0]}</h3><p>${c[3]}</p></article>`).join('')}</div></section>
     <div class="kit-head" data-scene="signal"><div class="sec-head"><h2 class="sec-title" data-split>In the kit room</h2><p>Cinema cameras, glass and lights we own and know inside out.</p></div></div>
-    <section class="marquee small" aria-label="Equipment" data-scene="signal"><div class="mq-row outline"><div class="mq-track">${mqItems(KIT)}</div></div></section>
+    <section class="marquee small" aria-label="Equipment" data-scene="signal"><div class="mq-row"><div class="mq-track">${mqItems(KIT)}</div></div></section>
     ${quotesHTML()}
     ${thanksHTML('Join us', 'For projects and collaborations, email', 'Work with us?')}` },
 
